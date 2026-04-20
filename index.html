@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML 2 CSS : datavisualisations</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, viewport-fit=auto"/>
+        <link rel="stylesheet" href="main.css" type="text/css">
+        <link rel="stylesheet" href="charts.css" type="text/css">
+        <script src="main.js"></script>
+        <script async src="https://public.codepenassets.com/embed/index.js"></script>
+    </head>
+    <body>
+        <div class="menu"><input type="checkbox" id="css_toggle" checked><label for="css_toggle">Display CSS for data visualisations</label></div>
+        <h1>Digital accessibility portal data visualisations</h1>
+        <figure role="group" aria-label="Photo by Logan Voss on Unsplash" class="pic">
+            <img src="img/splashscreen.jpg" alt="Image d'abstraction">
+            <figcaption>Photo by <a href="https://unsplash.com/fr/@loganvoss?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Logan Voss</a> on <a href="https://unsplash.com/fr/photos/motif-geometrique-abstrait-jaune-et-blanc-lGrNIV640BY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </figcaption>
+        </figure> 
+        <h2>Welcome</h2>
+        <aside>
+            <p>This page presents six diagrams created in CSS using semantic and accessible content, coded using only the following HTML tags:</p>
+            <ul>
+                <li><code>&lt;table&gt;</code></li>
+                <li><code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code></li>
+                <li><code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code></li>
+            </ul>
+            <p>These HTML elements are then “repainted” using CSS.</p>
+            <p>This project comprises four files:</p>
+            <ul>
+                <li><strong>index.html</strong>: the content;</li>
+                <li><strong>main.css</strong>: a few elements to style the page and, optionally, the modules (tables, lists and definition lists) when the modules.css file is disabled;</li>
+                <li><strong>charts.css</strong>: the style sheet that performs transformations on tables, lists and definition lists, turning them into infographics;</li>
+                <li><strong>main.js</strong>: an optional script that allows you to enable/disable the charts.css style sheet and animates the infographics when they enter the viewport. This feature, which uses the IntersectionObserver API, may eventually be replaced by the CSS animation-trigger property once it is supported by all browsers. If you prefer to do without it, simply ignore the .hideChart and .animChart statements.</li>
+            </ul>
+            <p>This project is open source, licensed under CC0, and therefore freely reusable.</p>
+        </aside>
+        <h2>Table to table and bar chart</h2>
+        <aside>
+            <p>Here, we retain the table structure but add a ‘bar chart’ presentation to each row. The length of each section, proportional to the percentage indicated, is specified via the <code>style</code> attribute and a <code>--ratio</code> variable. Technically, this is the simplest styling approach.</p>
+        </aside>
+        <section class="Widget">
+            <h3 class="Widget-title">The accessibility ranking: best websites in 2025</h3>
+            <div class="Widget-body">
+                <table class="TopWebsites widgetMain" id="top10">
+                    <caption id="TopWebsites-Caption">Websites / apps ranking by compliance level.<br>Synthesis of data established during in-depth audits in 2025</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Website / app</th>
+                            <th scope="col">Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hideChart" style="--ratio: 1;">
+                            <td>1</td><td><a href="details_106" lang="fr">Observatoire de l'accessibilité numérique</a></td><td>100&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.9;">
+                            <td>2</td><td><a href="details_91" lang="fr">Institut national de recherches archéologiques</a></td><td>90&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.887097;">
+                            <td>3</td><td><a href="details_93" lang="fr">Centre commun de la sécurité sociale</a></td><td>89&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.857143;">
+                            <td>4</td><td><a href="details_85" lang="fr">Accessibilité infrastructure - Luxembourg</a></td><td>86&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.821918;">
+                            <td>5</td><td><a href="details_101" lang="fr">Sécurité alimentaire</a></td><td>82&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.8181820000000001;">
+                            <td>6</td><td><a href="details_100" lang="fr">Portail du Grand-Duché de Luxembourg</a></td><td>82&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.768116;">
+                            <td>7</td><td><a href="details_87" lang="fr">Trésorerie de l'Etat</a></td><td>77&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.606061;">
+                            <td>8</td><td><a href="details_89" lang="fr">Portail de la fonction publique</a></td><td>61&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.5949369999999999;">
+                            <td>9</td><td><a href="details_88" lang="en">Bee secure</a></td><td>59&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.5483870000000001;">
+                            <td>10</td><td><a href="details_86" lang="fr">Hospices Civils de la Ville de Luxembourg</a></td><td>55&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.520548;">
+                            <td>11</td><td><a href="details_103" lang="lb">Devenez acteur de votre transition énergétique | Klima-Agence</a></td><td>52&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.508197;">
+                            <td>12</td><td><a href="details_98" lang="fr">CITA - Contrôle et information du trafic sur les autoroutes</a></td><td>51&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.468354;">
+                            <td>13</td><td><a href="details_90" lang="fr">Orientation.lu</a></td><td>47&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.415094;">
+                            <td>14</td><td><a href="details_97" lang="fr">Guichet Unique PME</a></td><td>42&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.4;">
+                            <td>15</td><td><a href="details_99" lang="en">Digital Learning Hub - Affordable IT Courses in Luxembourg</a></td><td>40&nbsp;%</td>
+                        </tr>
+                        <tr class="hideChart" style="--ratio: 0.386667;">
+                            <td>16</td><td><a href="details_102" lang="fr">SNHBM - Société nationale des habitations à bon marché</a></td><td>39&nbsp;%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <p class="codepen" data-height="300" data-pen-title="Untitled" data-default-tab="css,result" data-slug-hash="pvEBKEj" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/pvEBKEj">
+        Table to table and bar chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <h2>Definition list to column chart</h2>
+        <aside>
+            <p>Here, the structure of the dd list is transformed into a column chart. The height of the bars is defined using the <code>style</code> attribute and a <code>--value</code> variable. The difference in style for the <code>&lt;dd&gt;</code> attribute when the value is zero is achieved using a specific <code>.low</code> class.</p>
+        </aside>
+        <section class="Widget flexWidget">
+            <h3 class="Widget-title" id="Percentiles-Title">Distribution of compliance rates: websites  in 2025</h3>
+            <p class="caption" id="Percentiles-Caption">Number of websites / apps, divided into percentiles.<br>Synthesis of data established during in-depth audits in 2025</p>
+            <div class="Widget-body" id="percentilesResults">
+                <dl>
+                    <div><dt>0 - 10<span class="wbr">%</span></dt><dd class="low">0</dd></div>
+                    <div><dt>11 - 20<span class="wbr">%</span></dt><dd class="low">0</dd></div>
+                    <div><dt>21 - 30<span class="wbr">%</span></dt><dd class="low">0</dd></div>
+                    <div><dt>31 - 40<span class="wbr">%</span></dt><dd style="--value: 80;" class="hideChart">2</dd></div>
+                    <div><dt>41 - 50<span class="wbr">%</span></dt><dd style="--value: 120;" class="hideChart">3</dd></div>
+                    <div><dt>51 - 60<span class="wbr">%</span></dt><dd style="--value: 160;" class="hideChart">4</dd></div>
+                    <div><dt>61 - 70<span class="wbr">%</span></dt><dd class="low">0</dd></div>
+                    <div><dt>71 - 80<span class="wbr">%</span></dt><dd style="--value: 40;" class="hideChart">1</dd></div>
+                    <div><dt>81 - 90<span class="wbr">%</span></dt><dd style="--value: 200;" class="hideChart">5</dd></div>
+                    <div><dt>91 - 100<span class="wbr">%</span></dt><dd style="--value: 40;" class="hideChart">1</dd></div>
+                </dl>
+            </div>
+        </section>
+        <p class="codepen" data-height="300" data-pen-title="Definition list to column chart" data-default-tab="css,result" data-slug-hash="JoRVZLL" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/JoRVZLL">Definition list to column chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <h2>Table to column chart</h2>
+        <aside>
+            <p>Same principle as before, but with a table as the data structure.</p>
+        </aside>
+        <section class="Widget">
+            <h3 class="Widget-title" id="AdminLevels-Title">Compliance rate by administrative level: websites  in 2025</h3>
+            <div class="Widget-body">
+                <table class="columnchart">
+                    <caption id="AdminLevels-Caption">Compliance rate by administrative level in percent.<br>Synthesis of data established during in-depth audits  in 2025</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><p>State</p></th>
+                            <th scope="col"><p>Cities</p></th>
+                            <th scope="col"><p>Others</p></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="--value: 69;" class="hideChart">69%</td>
+                            <td style="--value: 55;" class="hideChart">55%</td>
+                            <td style="--value: 49;" class="hideChart">49%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <p class="codepen" data-height="300" data-pen-title="Table to column chart" data-default-tab="css,result" data-slug-hash="GgjLGGa" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/GgjLGGa">Table to column chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <h2>Table to pie chart</h2>
+        <aside>
+            <p>For the purposes of the observatory, only two elements are required: the proportion with a statement, and the proportion without a statement. The table is redrawn as a legend, and we use the <code>::before</code> and <code>::after</code> pseudo-classes to create the two sections of the pie chart. <code>::before</code> creates the entire pie chart, whilst <code>::after</code> places the other section, using the CSS property <code>background: conic-gradient</code>, which incorporates the white edges.</p>
+        </aside>
+        <style>
+            #resultsStatements-pie-app table.piechart {
+                --3: 33%; 
+                --4: 67%;
+                --3wB: 32.8%;
+                --3wBend: 33.3%;
+            }
+        </style>
+        <section class="Widget">
+            <h3 class="Widget-title" id="statements-apps">Apps with an updated statement within the last three years</h3>
+            <div class="Widget-body" id="resultsStatements-pie-app">
+                <table class="piechart hideChart" aria-labelledby="statements-apps">
+                    <thead class="sr-only">
+                        <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Proportion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">with a statement</th>
+                            <td>63 (33%)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">without a statement</th>
+                            <td>127 (67%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <p class="codepen" data-height="300" data-pen-title="Table to pie chart" data-default-tab="css,result" data-slug-hash="WbGWygr" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/WbGWygr">Table to pie chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <h2>List to multibar chart</h2>
+        <aside>
+            <p>Here, we start with a two-level ul and li list and render it as a multi-bar chart.</p>
+        </aside>
+        <style>
+            div.multibarchart {
+                --y: 0.6; 
+            }
+
+            div.multibarchart ul li:nth-child(1) ul li:nth-of-type(1) > span:nth-child(1) {
+                --value: 331;
+            }
+
+            div.multibarchart ul li:nth-child(1) ul li:nth-of-type(2) > span:nth-child(1) {
+                --value: 476;
+            }
+
+            div.multibarchart ul li:nth-child(2) ul li:nth-of-type(1) > span:nth-child(1) {
+                --value: 109;
+            }
+
+            div.multibarchart ul li:nth-child(2) ul li:nth-of-type(2) > span:nth-child(1) {
+                --value: 297;
+            }
+
+            div.multibarchart ul li:nth-child(3) ul li:nth-of-type(1) > span:nth-child(1) {
+                --value: 85;
+            }
+
+            div.multibarchart ul li:nth-child(3) ul li:nth-of-type(2) > span:nth-child(1) {
+                --value: 255;
+            }
+        </style>
+        <section class="Widget">
+            <h3 class="Widget-title">Statements by administrative level</h3>
+            <div class="Widget-body">
+                <div class="multibarchart">
+                    <ul>
+                        <li>
+                            <span>State</span>
+                            <ul>
+                                <li><span class="hideChart"></span><span><strong>331</strong> statements</span></li>
+                                <li><span class="hideChart"></span><span><strong>476</strong> sites / apps</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Cities</span>
+                            <ul>
+                                <li><span class="hideChart"></span><span><strong>109</strong> statements</span></li>
+                                <li><span class="hideChart"></span><span><strong>297</strong> sites / apps</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Others</span>
+                            <ul>
+                                <li><span class="hideChart"></span><span><strong>85</strong> statements</span></li>
+                                <li><span class="hideChart"></span><span><strong>255</strong> sites / apps</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <p class="codepen" data-height="300" data-pen-title="List to multibar chart" data-default-tab="css,result" data-slug-hash="ByLEVqa" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/ByLEVqa">List to multibar chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <h2>Definition list to bar chart</h2>
+        <aside>
+            <p>One final example of a bar chart, but this time created from a list of definitions.</p>
+        </aside>
+        <section class="Widget">
+            <h3 class="Widget-title">Top non-compliance issues: websites  in 2025</h3>
+            <div class="Widget-body" id="topNCresults">
+                <dl>
+                    <div><dt>Missing accessible version of office documents<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-13-3" title="criteria 13.3 in the framework"><span class="sr-only">criteria 13.3 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 100%;">13</dd></div>
+                    <div><dt>Script incompatible with assistive technologies<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-7-1" title="criteria 7.1 in the framework"><span class="sr-only">criteria 7.1 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 100%;">13</dd></div>
+                    <div><dt>Inappropriate heading structure<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-9-1" title="criteria 9.1 in the framework"><span class="sr-only">criteria 9.1 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 100%;">13</dd></div>
+                    <div><dt>Tag misused for presentation purposes<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-8-9" title="criteria 8.9 in the framework"><span class="sr-only">criteria 8.9 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 92.3077%;">12</dd></div>
+                    <div><dt>Badly structured list<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-9-3" title="criteria 9.3 in the framework"><span class="sr-only">criteria 9.3 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 92.3077%;">12</dd></div>
+                    <div><dt>Focus is barely visible or invisible<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-10-7" title="criteria 10.7 in the framework"><span class="sr-only">criteria 10.7 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 84.6154%;">11</dd></div>
+                    <div><dt>Information incomprehensible without CSS<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-10-3" title="criteria 10.3 in the framework"><span class="sr-only">criteria 10.3 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 84.6154%;">11</dd></div>
+                    <div><dt>Insufficient text contrast<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-3-2" title="criteria 3.2 in the framework"><span class="sr-only">criteria 3.2 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 84.6154%;">11</dd></div>
+                    <div><dt>Badly structured web page<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-9-2" title="criteria 9.2 in the framework"><span class="sr-only">criteria 9.2 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 84.6154%;">11</dd></div>
+                    <div><dt>Rendered decoration <a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-1-2" title="criteria 1.2 in the framework"><span class="sr-only">criteria 1.2 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 84.6154%;">11</dd></div>
+                    <div><dt>Missing language change<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-8-7" title="criteria 8.7 in the framework"><span class="sr-only">criteria 8.7 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 84.6154%;">11</dd></div>
+                    <div><dt>Insufficient component contrast<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-3-3" title="criteria 3.3 in the framework"><span class="sr-only">criteria 3.3 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 76.9231%;">10</dd></div>
+                    <div><dt>Insufficient input correction suggestion<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-11-11" title="criteria 11.11 in the framework"><span class="sr-only">criteria 11.11 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 69.2308%;">9</dd></div>
+                    <div><dt>Irrelevant page title<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-8-6" title="criteria 8.6 in the framework"><span class="sr-only">criteria 8.6 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 69.2308%;">9</dd></div>
+                    <div><dt>Inexplicit link<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-6-1" title="criteria 6.1 in the framework"><span class="sr-only">criteria 6.1 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 69.2308%;">9</dd></div>
+                    <div><dt>Insufficient input error management<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-11-10" title="criteria 11.10 in the framework"><span class="sr-only">criteria 11.10 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 69.2308%;">9</dd></div>
+                    <div><dt>Ineffective automatic field completion<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-11-13" title="criteria 11.13 in the framework"><span class="sr-only">criteria 11.13 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 61.5385%;">8</dd></div>
+                    <div><dt>Loss of information when zooming<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-10-4" title="criteria 10.4 in the framework"><span class="sr-only">criteria 10.4 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 61.5385%;">8</dd></div>
+                    <div><dt>Unable to control script with keyboard and mouse<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-7-3" title="criteria 7.3 in the framework"><span class="sr-only">criteria 7.3 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 53.8462%;">7</dd></div>
+                    <div><dt>Information provided solely by color<a class="frameworkLink" href="https://accessibilite.public.lu/en/raweb1/criteres.html#crit-3-1" title="criteria 3.1 in the framework"><span class="sr-only">criteria 3.1 in the framework</span><img src="img/bulb-icon.svg" alt=""></a></dt><dd class="hideChart" style="width: 53.8462%;">7</dd></div>
+                </dl>
+            </div>
+            <p class="caption" id="NC-Caption">Ranking of non-compliances according to their frequency.<br>Synthesis of data established during in-depth audits  in 2025</p>
+        </section>
+        <p class="codepen" data-height="300" data-pen-title="Untitled" data-default-tab="css,result" data-slug-hash="myrgKaY" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/myrgKaY">Definition list to bar chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <aside>
+            <p>These visualisations are currently active on the <a href="https://observatoire.accessibilite.public.lu/">Digital accessibility observatory</a>.</p>
+            <p>They are inspired by the work of Gaël Poupard, a front-end developer based in Nantes. We invite you to visit <a href="https://www.ffoodd.fr/">his page</a> for further information.</p>
+        </aside>
+        <footer>
+            <a href="https://sip.gouvernement.lu/fr.html"><img src="img/SIP_fr.svg" class="partner" alt="Le Gouvernement du Grand-duché de Luxembourg - Service information et presse"> </a>
+        </footer>
+    </body>
+</html>

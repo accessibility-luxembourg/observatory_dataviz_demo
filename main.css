@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Fira Sans", sans-serif;
+    background-color: white;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, a:visited {
+    color: #1d3d5e;
+}
+
+code {
+    color:darkred;
+}
+
+p, ul, li, a, h1, h2, h3, dl, dd, dt {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; 
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1d3d5e;
+    margin: auto;
+    max-width: 1000px;
+    padding: 4rem 0 2rem 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1d3d5e;
+    margin: auto;
+    max-width: 1000px;
+    padding: 0 0 2rem 3rem;
+}
+
+aside {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+}
+
+section.Widget {
+    border: 1px solid #d0e2f6;
+    border-radius: 0.5rem;
+    box-shadow: .5ch .5lh 2ch rgba(0 0 0 / 2%);
+    background-color: white;
+    padding: 1rem;
+    color: #1d3d5e;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    box-sizing: border-box;
+}
+
+section.flexWidget {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 450px) {
+    section.Widget {
+        padding: 2rem 4ch 3rem 4ch;
+    }
+}
+
+section.Widget h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    background-color: #1d3d5e;
+    color: white;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.hideChart {
+    opacity: 0 !important;
+}
+
+figure {
+    max-width: 3000px;
+    margin: 0 auto;
+}
+
+figure img {
+    width: 100%; 
+    height: auto;
+}
+
+figure figcaption {
+    font: normal 300 0.7rem 'Fira Sans', sans-serif;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+footer {
+    background-color: #1d3d5e;
+}
+
+footer a {
+    display: block;
+    width: 250px;
+    margin: 0 3rem 0 auto;
+    padding: 2rem 0;
+}
+
+footer img.partner {
+   width: 100%;
+    height: auto;
+}
+
+.cp_embed_wrapper {
+    max-width: 1000px;
+    margin: 1rem auto 3rem auto;
+}
+
+/* basic css styling for modules when the charts.css file is ignored */
+table {
+    width: 100%;
+}
+
+table tr td {
+    text-align: center;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dl, dd {
+  font-size: 0.9rem;
+}
+
+dd {
+  margin: 0 0 1rem 1rem;
+}
+
+ul li ul {
+    margin-left: 1rem;
+}
+
+a.frameworkLink img {
+    max-width: 15px;
+    height: auto;
+}

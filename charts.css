@@ -1,0 +1,504 @@
+/* Table to table and bar chart */
+section.Widget table.widgetMain {
+    color: #1d3d5e;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+section.Widget table caption, section.Widget p.caption, section.Widget div.caption {
+    caption-side: bottom;
+    margin-top: 2lh;
+    font-size: .9rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #546d88;
+    text-align: center;
+}
+
+section.Widget table.widgetMain th, section.Widget table.widgetMain td {
+    padding: 1lh 1ch;
+    hyphens: auto;
+}
+
+@media screen and (min-width: 450px) {
+    section.Widget table.widgetMain th, section.Widget table.widgetMain td {
+        padding: 1lh 2ch;
+        hyphens: none;
+    }
+}
+
+section.Widget table.widgetMain th {
+    border-bottom: 1px solid #e5effa;
+    font-style: italic;
+    font-weight: 600;
+}
+
+section.Widget table.widgetMain tbody tr {
+    background-size: 100% 4px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, rgba(38,77,253,0.15) 0%, rgba(38,77,253,0.15) calc(var(--ratio)* 100%), rgba(208,226,246,0.15) calc(var(--ratio)* 100%), rgba(208,226,246,0.15) 100%);
+    transition: all .3s ease-in-out;
+}
+
+section.Widget table.widgetMain tbody tr.animChart {
+    animation: fillTop10Chart 2s ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+  section.Widget table.widgetMain tbody tr.animChart {
+    animation: none;
+  }
+}
+
+@keyframes fillTop10Chart {
+    0% {background-size: 0 4px;}
+    100% {background-size: 100% 4px;}
+}
+
+section.Widget table.widgetMain tbody tr:hover, section.Widget table.widgetMain tbody tr:has(a:focus) {
+    background-color: #f2f7fd;
+}
+
+section.Widget table tbody tr:hover, section.Widget table tbody tr:has(a:focus) {
+    background-image: linear-gradient(to right, rgba(38,77,253,1) 0%, rgba(38,77,253,1) calc(var(--ratio)* 100%), rgba(208,226,246,1) calc(var(--ratio)* 100%), rgba(208,226,246,1) 100%);
+}
+
+section.Widget table td:first-child {
+    text-align: center;
+}
+
+/* Table to table and bar chart */
+section.Widget table.TopWebsites tbody.show10 tr:nth-child(n+11){
+    display: none;
+}
+
+section.Widget table.TopWebsites tbody tr {
+    position: relative;
+    transform: translate(0);
+    clip-path: inset(0);
+}
+
+section.Widget table.TopWebsites tbody tr td a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+/* Definition list to column chart */
+p#Percentiles-Caption {
+    order: 4;
+}
+
+div#percentilesResults dl {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 250px;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+div#percentilesResults dl div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 24px;
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 500px) {
+    div#percentilesResults dl div span.wbr {
+        display: block;
+    }
+}
+
+div#percentilesResults dl div.active::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #88afdb;
+    border-left: 10px solid transparent;
+    bottom: -1rem;
+    left: attr(data-position);
+}
+
+@media screen and (min-width: 450px) {
+    div#percentilesResults dl div {
+        width: 30px;
+    }
+}
+
+div#percentilesResults dl div dt {
+    order: 2;
+    padding-top: 0.3rem;
+    font-weight: 400;
+}
+
+div#percentilesResults dl div dd {
+    margin: 0;
+    width: auto;
+    background-color: #264dfd;
+    font-weight: 600;
+    padding: 0.3rem 0;
+    border-radius: 0.5rem;
+    opacity: 0.95;
+    order: 1;
+    box-sizing: border-box;
+    min-height: 25px;
+    height: calc(var(--value) * 1px);
+}
+
+div#percentilesResults dl div dd.animChart {
+    animation: fillDLPctleChart 2s ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+  div#percentilesResults dl div dd.animChart {
+    animation: none;
+  }
+}
+
+@keyframes fillDLPctleChart {
+    0% {max-height: 25px; opacity: 0;}
+    30% {opacity: 1;}
+    100% {max-height: 100%;}
+}
+
+div#percentilesResults dl div dd {
+    color: white;
+    text-align: center;
+}
+
+div#percentilesResults dl div dd.low {
+    background-color: transparent;
+    color: black;
+    border-bottom: 2px solid black;
+    border-radius: 0;
+}
+
+/* Table to column chart */
+.columnchart {
+    display: grid;
+    position: relative;
+    align-items: end;
+    margin-top: 2rem;
+}
+
+.columnchart td,
+.columnchart th {
+  margin: 0;
+  position: relative;
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+.columnchart th {
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding-top: 0.3rem;
+}
+
+.columnchart tr,
+.columnchart tbody,
+.columnchart thead {
+  display: contents;
+  text-align: center;
+}
+
+.columnchart thead * {
+    grid-row: 2;
+}
+
+.columnchart thead tr *:nth-of-type(1) {
+    grid-column: 1;
+}
+
+.columnchart thead tr *:nth-of-type(2) {
+    grid-column: 2;
+}
+
+.columnchart thead tr *:nth-of-type(3) {
+    grid-column: 3;
+}
+
+.columnchart td {
+    background-color: #264dfd;
+    opacity: 0.95;
+    height: calc(var(--value) * 2px);
+    color: white;
+    padding-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+.columnchart td.animChart {
+    animation: fillDLPctleChart 2s ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+  .columnchart td.animChart {
+    animation: none;
+  }
+}
+
+.columnchart td:nth-of-type(1) {
+    grid-column: 1;
+}
+
+.columnchart td:nth-of-type(2) {
+    grid-column: 2;
+}
+  
+.columnchart td:nth-of-type(3) {
+    grid-column: 3;
+}
+
+.columnchart caption {
+    grid-row: 3;
+    grid-column: 1 / span 3;
+}
+
+/* List to bar chart */
+div.multibarchart {
+    font: normal 300 0.9rem "Fira Sans";
+    display: flex;
+    flex-direction: column;
+}
+
+div.multibarchart div.caption {
+    order: 2;
+}
+
+div.multibarchart ul {
+    list-style-type: none;
+}
+
+div.multibarchart > ul > li {
+    display: flex;
+    margin: 1rem 0;
+}
+
+div.multibarchart > ul > li > span {
+    flex: 0 0 2rem;
+    border-right: 1px solid rgb(207, 207, 207);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 0.3rem;
+}
+
+div.multibarchart > ul > li > ul {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    flex: 1 0 auto;
+}
+
+@media screen and (min-width: 450px) {
+    div.multibarchart > ul > li > ul {
+        font-size: 0.9rem;
+    }
+    div.multibarchart > ul > li > span {
+        flex: 0 0 5rem;
+    }
+}
+
+div.multibarchart > ul > li > ul li {
+    display: flex;
+}
+
+div.multibarchart > ul > li > ul li:nth-child(1) {
+    margin-bottom: 0.3rem;
+}
+
+div.multibarchart > ul > li > ul li > span {
+    margin-right: 0.5rem;
+}
+
+div.multibarchart > ul > li > ul li > span:nth-child(1) {
+    background: #4a5759 url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12"><path fill="hsl(0 0% 100% / .6)" fill-rule="evenodd" d="M9.8 12 0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z"/></svg>');
+    width: calc(var(--value) *  var(--y) * 0.15%);
+    height: 18px;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+div.multibarchart > ul > li > ul li:nth-of-type(odd) > span:nth-child(1) {
+    background: #264dfd;
+    opacity: 0.9;
+}
+
+div.multibarchart > ul > li > ul li > span.animChart {
+    animation: fillMultiBarChart 2s ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+  div.multibarchart > ul > li > ul li > span.animChart {
+    animation: none;
+  }
+}
+
+@keyframes fillMultiBarChart {
+    0% {width: 0;}
+    100% {width: calc(var(--value) * var(--y) * 0.15%)}
+}
+
+/* Table to pie chart */
+.piechart {
+    --hexagons: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12"><path fill="hsl(0 0% 100% / .6)" fill-rule="evenodd" d="M9.8 12 0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z"/></svg>');
+    --radius: 15rem;
+    margin: 0 auto;
+    padding-block-start: calc(var(--radius) - 2rem);
+    position: relative;
+    caption-side: bottom;
+}
+
+.piechart::before, .piechart::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  content: "";
+}
+
+.piechart::before {
+  background: #4a5759 var(--hexagons);
+}
+
+.piechart.animChart::after {
+    animation: appearPie 2s ease-in-out;
+}
+
+#resultsStatements-pie-app .piechart::after {
+  background:
+	conic-gradient(
+		white 0,
+        white 0.2%,
+        #264dfd 0.6%,
+		#264dfd var(--3),
+        white var(--3wB),
+        white var(--3wBend),
+		transparent 0,
+		transparent 100%
+	);
+}
+
+/* Pie chart legend */
+.piechart tbody {
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.piechart tr:nth-of-type(2) {
+  --background: var(--hexagons);
+}
+
+.piechart [scope=row] {
+  padding-inline-end: 0.5rem;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.piechart [scope=row]::before {
+  background: var(--color) var(--background);
+  background-color: var(--color);
+  block-size: 1rem;
+  content: "";
+  display: inline-block;
+  inline-size: 1rem;
+  translate: calc(-0.2rem * var(--is-rtl, 1)) 0.1rem 0;
+}
+
+.piechart tbody tr {
+  width: fit-content;
+  padding: 0 0.5rem;
+}
+
+.piechart tbody tr:nth-of-type(1) {
+    --color: #264dfd;
+}
+
+.piechart tbody tr:nth-of-type(2) {
+    --color: #4a5759;
+}
+
+.piechart table, .piechart thead, .piechart tr {
+    width: 100%;
+    text-align: center;
+}
+
+/* Pie chart animation */
+@keyframes appearPie {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@media (prefers-reduced-motion) {
+  .piechart.animChart::after {
+    animation: none;
+  }
+}
+
+/* Definition list to bar chart */
+div#topNCresults dl {
+    font-size: 0.9rem;
+    margin-top: 0.7rem;
+}
+
+div#topNCresults dl dt {
+    font-weight: 400;
+}
+
+div#topNCresults a.frameworkLink {
+    margin-left: 0.5rem;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+div#topNCresults a.frameworkLink img {
+    max-width: 15px;
+    height: auto;
+}
+
+div#topNCresults a.frameworkLink img {
+    position: relative;
+}
+
+div#topNCresults dd {
+    background-color: #264dfd;
+    margin: 0 0 1rem 0;
+    text-align: right;
+    color: white;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.5rem;
+    opacity: 0.95;
+    box-sizing: border-box;
+}
+
+div#topNCresults dd.animChart {
+    animation: fillDLChart 2s ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+  div#topNCresults dd.animChart {
+    animation: none;
+  }
+}
+
+@keyframes fillDLChart {
+    0% {max-width: 0;}
+    100% {max-width: 100%;}
+}
