@@ -26,6 +26,11 @@ p, ul, li, a, h1, h2, h3, dl, dd, dt {
     font-weight: 400;
 }
 
+p, ul, h1, h2, h3 {
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
 .sr-only {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
@@ -43,7 +48,7 @@ h1 {
     color: #1d3d5e;
     margin: auto;
     max-width: 1000px;
-    padding: 4rem 0 2rem 0;
+    padding: 4rem 0.5rem 2rem 0.5rem;
 }
 
 h2 {
@@ -52,7 +57,7 @@ h2 {
     color: #1d3d5e;
     margin: auto;
     max-width: 1000px;
-    padding: 0 0 2rem 3rem;
+    padding: 0 0.5rem 2rem 3rem;
 }
 
 aside {
