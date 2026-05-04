@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>HTML 2 CSS : datavisualisations</title>
+        <title>Digital accessibility Luxembourg data visualization components</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, viewport-fit=auto"/>
         <link rel="stylesheet" href="main.css" type="text/css">
         <link rel="stylesheet" href="charts.css" type="text/css">
-        <script src="main.js"></script>
+        <script src="charts.js"></script>
         <script async src="https://public.codepenassets.com/embed/index.js"></script>
     </head>
     <body>
         <div class="menu"><input type="checkbox" id="css_toggle" checked><label for="css_toggle">Display CSS for data visualisations</label></div>
-        <h1>Digital accessibility portal data visualisations</h1>
+        <h1>Digital accessibility Luxembourg data visualization components </h1>
         <figure role="group" aria-label="Photo by Logan Voss on Unsplash" class="pic">
             <img src="img/splashscreen.jpg" alt="Image d'abstraction">
             <figcaption>Photo by <a href="https://unsplash.com/fr/@loganvoss?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Logan Voss</a> on <a href="https://unsplash.com/fr/photos/motif-geometrique-abstrait-jaune-et-blanc-lGrNIV640BY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -34,6 +34,10 @@
                 <li><strong>main.js</strong>: an optional script that allows you to enable/disable the charts.css style sheet and animates the infographics when they enter the viewport. This feature, which uses the IntersectionObserver API, may eventually be replaced by the CSS animation-trigger property once it is supported by all browsers. If you prefer to do without it, simply ignore the .hideChart and .animChart statements.</li>
             </ul>
             <p>This project is open source, licensed under CC0, and therefore freely reusable.</p>
+            <p>These visualisations were tested as part of an accessibility audit carried out in late 2025. No issues were identified, in line with the Observatory’s <a href="https://observatoire.accessibilite.public.lu/en/accessibilityStatement">accessibility statement</a>.</p>
+            <p>These visualisations are currently active on the <a href="https://observatoire.accessibilite.public.lu/">Digital accessibility observatory</a>.</p>
+            <p>You can get access to the code on <a href="https://github.com/accessibility-luxembourg/observatory_dataviz_demo">our GitHub repo</a>.</p>
+            <p>They are inspired by the work of Gaël Poupard, a front-end developer based in Nantes. We invite you to visit <a href="https://www.ffoodd.fr/">his page</a> and, more specifically, his <a href="https://ffoodd.github.io/chaarts/">Chaarts project</a> for further information.</p>
         </aside>
         <h2>Table to table and bar chart</h2>
         <aside>
@@ -200,6 +204,46 @@
         <p class="codepen" data-height="300" data-pen-title="Table to pie chart" data-default-tab="css,result" data-slug-hash="WbGWygr" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
             <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/WbGWygr">Table to pie chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
+        <aside>
+            <p>If you need more than two slices (limiting to 5-6 slices maximum ensures the chart remains clear), here is another suggestion</p>
+        </aside>
+        <section class="Widget">
+            <h3 class="Widget-title" id="sites-themes">Number of public sites per theme</h3>
+            <div class="Widget-body">
+                <table class="piechart2" aria-labelledby="sites-themes">
+                    <thead class="sr-only">
+                        <tr>
+                        <th scope="col">Theme</th>
+                        <th scope="col">Proportion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hideChart">
+                            <th scope="row">social protection</th>
+                            <td>452 (18%)</td>
+                        </tr>
+                        <tr class="hideChart">
+                            <th scope="row">health</th>
+                            <td>503 (20%)</td>
+                        </tr>
+                        <tr class="hideChart">
+                            <th scope="row">transport</th>
+                            <td>427 (17%)</td>
+                        </tr>
+                        <tr class="hideChart">
+                            <th scope="row">education</th>
+                            <td>628 (25%)</td>
+                        </tr>
+                        <tr class="hideChart">
+                            <th scope="row">employment</th>
+                            <td>503 (20%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <p class="codepen" data-height="300" data-pen-title="Table to pie chart v2" data-default-tab="css,result" data-slug-hash="vEyOdRY" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/vEyOdRY">Table to pie chart v2</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
         <h2>List to multibar chart</h2>
         <aside>
             <p>Here, we start with a two-level ul and li list and render it as a multi-bar chart.</p>
@@ -301,11 +345,6 @@
         <p class="codepen" data-height="300" data-pen-title="Untitled" data-default-tab="css,result" data-slug-hash="myrgKaY" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
             <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/myrgKaY">Definition list to bar chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
-        <aside>
-            <p>These visualisations are currently active on the <a href="https://observatoire.accessibilite.public.lu/">Digital accessibility observatory</a>.</p>
-            <p>You can get access to the code on <a href="https://github.com/accessibility-luxembourg/observatory_dataviz_demo">our GitHub repo</a>.</p>
-            <p>They are inspired by the work of Gaël Poupard, a front-end developer based in Nantes. We invite you to visit <a href="https://www.ffoodd.fr/">his page</a> for further information.</p>
-        </aside>
         <footer>
             <a href="https://sip.gouvernement.lu/fr.html"><img src="img/SIP_fr.svg" class="partner" alt="Le Gouvernement du Grand-duché de Luxembourg - Service information et presse"> </a>
         </footer>

@@ -5,6 +5,10 @@ section.Widget table.widgetMain {
     width: 100%;
 }
 
+section.Widget table.widgetMain a {
+    text-decoration: none;
+}
+
 section.Widget table caption, section.Widget p.caption, section.Widget div.caption {
     caption-side: bottom;
     margin-top: 2lh;
@@ -62,6 +66,10 @@ section.Widget table.widgetMain tbody tr:hover, section.Widget table.widgetMain 
 
 section.Widget table tbody tr:hover, section.Widget table tbody tr:has(a:focus) {
     background-image: linear-gradient(to right, rgba(38,77,253,1) 0%, rgba(38,77,253,1) calc(var(--ratio)* 100%), rgba(208,226,246,1) calc(var(--ratio)* 100%), rgba(208,226,246,1) 100%);
+}
+
+section.Widget table td {
+    text-align: left;
 }
 
 section.Widget table td:first-child {
@@ -501,4 +509,234 @@ div#topNCresults dd.animChart {
 @keyframes fillDLChart {
     0% {max-width: 0;}
     100% {max-width: 100%;}
+}
+
+/* Second pie chart */
+/* general parameters of the pie chart */
+.piechart2 {
+  font: normal 1rem "Fira Sans", sans-serif;
+  position: relative;
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  padding-block-start: calc(var(--radius) * 2 + 20px);
+  margin: auto;
+  --radius: 125px;
+  /* edit below: each portion as a percentage of the total */
+  --elt1: 18;
+  --elt2: 20;
+  --elt3: 17;
+  --elt4: 25;
+  --elt5: 20;
+  /* edit colours below */
+  --clr1: #f2cc8f;
+  --clr2: #81b29a;
+  --clr3: #3d405b;
+  --clr4: #e07a5f;
+  --clr5: #766153;
+  /* end of editing area */
+  --pie-elt1: calc(var(--elt1) * 3.60deg);
+  --pie-elt2: calc((var(--elt1) + var(--elt2)) * 3.60deg);
+  --pie-elt3: calc((var(--elt1) + var(--elt2) + var(--elt3)) * 3.60deg);
+  --pie-elt4: calc((var(--elt1) + var(--elt2) + var(--elt3) + var(--elt4)) * 3.60deg);
+  --pie-elt5: calc((var(--elt1) + var(--elt2) + var(--elt3) + var(--elt4) + var(--elt5)) * 3.60deg);
+}
+
+@media screen and (min-width: 500px) {
+  .piechart2 {
+    --radius: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .piechart2 {
+    --radius: 250px;
+  }
+}
+
+.piechart2::before, .piechart2::after {
+  position: absolute;
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  top: 0;
+  left: 0;
+  content: "";
+  border-radius: 50%;
+}
+
+/* slices of the pie chart */
+.piechart2::before {
+  background: conic-gradient(
+    var(--clr1) var(--pie-elt1),
+    var(--clr2) var(--pie-elt1),
+    var(--clr2) calc(var(--pie-elt2)),
+    var(--clr3) calc(var(--pie-elt2)),
+    var(--clr3) calc(var(--pie-elt3)),
+    var(--clr4) calc(var(--pie-elt3)),
+    var(--clr4) calc(var(--pie-elt4)),
+    var(--clr5) calc(var(--pie-elt4)),
+    var(--clr5) calc(var(--pie-elt5))
+    /* adjust here if you need more or less slices */
+  );
+}
+
+/* white borders between each slide of the pie chart */
+.piechart2::after {
+  background: conic-gradient(
+    white 0deg,
+    white 0.5deg,
+    transparent 1deg,
+
+    transparent calc(var(--pie-elt1) - 1deg),
+    white calc(var(--pie-elt1) - 0.5deg),
+    white calc(var(--pie-elt1) + 0.5deg),
+    transparent calc(var(--pie-elt1) + 1deg),
+
+    transparent calc(var(--pie-elt2) - 1deg),
+    white calc(var(--pie-elt2) - 0.5deg),
+    white calc(var(--pie-elt2) + 0.5deg),
+    transparent calc(var(--pie-elt2) + 1deg),
+
+    transparent calc(var(--pie-elt3) - 1deg),
+    white calc(var(--pie-elt3) - 0.5deg),
+    white calc(var(--pie-elt3) + 0.5deg),
+    transparent calc(var(--pie-elt3) + 1deg),
+
+    transparent calc(var(--pie-elt4) - 1deg),
+    white calc(var(--pie-elt4) - 0.5deg),
+    white calc(var(--pie-elt4) + 0.5deg),
+    transparent calc(var(--pie-elt4) + 1deg),
+
+    transparent calc(var(--pie-elt5) - 1deg),
+    white calc(var(--pie-elt5) - 0.5deg)
+    /* adjust here if you need more or less slices */
+  );
+}
+
+/* legend and counters */
+.piechart2 tbody {
+  counter-reset: count 0;
+}
+
+.piechart2 tbody tr th,.piechart2 tbody tr td {
+  width: var(--radius);
+}
+
+.piechart2 tbody tr th {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.piechart2 tbody tr th::before {
+  counter-increment: count 1;
+}
+
+.piechart2 tbody tr th::before, .piechart2 tbody tr::after {
+  content: counter(count, decimal);
+  font: bold 0.9rem "Fira Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.piechart2 tbody tr th::before {
+  font-weight: 300;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.3rem;
+}
+
+.piechart2 tbody tr th {
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.piechart2 tbody tr::after {
+  position: absolute;
+  left: calc(var(--radius) - 10px);
+  top : calc(var(--radius) - 10px);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+}
+
+.piechart2 tbody tr:nth-of-type(1)::after {
+  --offset: calc(270deg + var(--pie-elt1) - ((var(--elt1) * 3.60deg) / 2));
+  transform: translateX(calc(cos(var(--offset)) * var(--radius))) translateY(calc(sin(var(--offset)) * var(--radius)));
+}
+
+.piechart2 tbody tr:nth-of-type(2)::after {
+  --offset: calc(270deg + var(--pie-elt2) - ((var(--elt2) * 3.60deg) / 2));
+  transform: translateX(calc(cos(var(--offset)) * var(--radius))) translateY(calc(sin(var(--offset)) * var(--radius)));
+  border: 2px solid var(--clr2);
+}
+
+.piechart2 tbody tr:nth-of-type(3)::after {
+  --offset: calc(270deg + var(--pie-elt3) - ((var(--elt3) * 3.60deg) / 2));
+  transform: translateX(calc(cos(var(--offset)) * var(--radius))) translateY(calc(sin(var(--offset)) * var(--radius)));
+  border: 2px solid var(--clr3);
+}
+
+.piechart2 tbody tr:nth-of-type(4)::after {
+  --offset: calc(270deg + var(--pie-elt4) - ((var(--elt4) * 3.60deg) / 2));
+  transform: translateX(calc(cos(var(--offset)) * var(--radius))) translateY(calc(sin(var(--offset)) * var(--radius)));
+  border: 2px solid var(--clr4);
+}
+
+.piechart2 tbody tr:nth-of-type(5)::after {
+  --offset: calc(270deg + var(--pie-elt5) - ((var(--elt5) * 3.60deg) / 2));
+  transform: translateX(calc(cos(var(--offset)) * var(--radius))) translateY(calc(sin(var(--offset)) * var(--radius)));
+  border: 2px solid var(--clr5);
+}
+
+.piechart2 tbody tr:nth-of-type(6)::after {
+  --offset: calc(270deg + var(--pie-elt6) - ((var(--elt6) * 3.60deg) / 2));
+  transform: translateX(calc(cos(var(--offset)) * var(--radius))) translateY(calc(sin(var(--offset)) * var(--radius)));
+  border: 2px solid var(--clr6);
+}
+
+.piechart2 tbody tr:nth-of-type(1)::after, .piechart2 tbody tr:nth-of-type(1) th::before {
+  border-color: var(--clr1);
+}
+
+.piechart2 tbody tr:nth-of-type(2)::after, .piechart2 tbody tr:nth-of-type(2) th::before {
+  border-color: var(--clr2);
+}
+
+.piechart2 tbody tr:nth-of-type(3)::after, .piechart2 tbody tr:nth-of-type(3) th::before {
+  border-color: var(--clr3);
+}
+
+.piechart2 tbody tr:nth-of-type(4)::after, .piechart2 tbody tr:nth-of-type(4) th::before {
+  border-color: var(--clr4);
+}
+
+.piechart2 tbody tr:nth-of-type(5)::after, .piechart2 tbody tr:nth-of-type(5) th::before {
+  border-color: var(--clr5);
+}
+
+.piechart2 tbody tr:nth-of-type(6)::after, .piechart2 tbody tr:nth-of-type(6) th::before {
+  border-color: var(--clr6);
+}
+
+/* above six slices, a pie chart becomes hard to read */
+
+/* animation */
+.piechart2 tbody tr.animChart::after {
+      animation: appear 2s ease-in-out;
+}
+
+@media (prefers-reduced-motion) {
+  div#topNCresults dd.animChart {
+    animation: none;
+  }
+}
+
+@keyframes appear {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
