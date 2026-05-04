@@ -13,4 +13,4 @@ For more information, please go to this page: https://accessibility-luxembourg.g
 
 This software is (c) [Information and press service](https://sip.gouvernement.lu/en.html) of the luxembourgish government and licensed under the MIT license.
 
-Some elements were adapted from the [ffoodd/cgaarts project](https://github.com/ffoodd/chaarts) by Gaël Poupard, under MIT license.
+Some elements were adapted from the [ffoodd/chaarts project](https://github.com/ffoodd/chaarts) by Gaël Poupard, under MIT license.
