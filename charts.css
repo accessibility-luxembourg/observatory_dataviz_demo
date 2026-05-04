@@ -726,12 +726,16 @@ div#topNCresults dd.animChart {
 /* above six slices, a pie chart becomes hard to read */
 
 /* animation */
+.piechart2.animChart::before {
+  animation: appear 0.5s ease-in-out;
+}
+
 .piechart2 tbody tr.animChart::after {
-      animation: appear 2s ease-in-out;
+  animation: appear 2s ease-in-out;
 }
 
 @media (prefers-reduced-motion) {
-  div#topNCresults dd.animChart {
+  .piechart2 tbody tr.animChart::after {
     animation: none;
   }
 }
