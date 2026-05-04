@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, viewport-fit=auto"/>
         <link rel="stylesheet" href="main.css" type="text/css">
         <link rel="stylesheet" href="charts.css" type="text/css">
-        <script src="charts.js"></script>
+        <script src="charts_toggle.js"></script>
+        <script src="charts_animation.js"></script>
         <script async src="https://public.codepenassets.com/embed/index.js"></script>
     </head>
     <body>
@@ -32,7 +33,7 @@
                 <li><strong>main.css</strong>: a few elements to style the page and, optionally, the modules (tables, lists and definition lists) when the modules.css file is disabled;</li>
                 <li><strong>charts.css</strong>: the style sheet that performs transformations on tables, lists and definition lists, turning them into infographics;</li>
                 <li><strong>main.js</strong>: an optional script that allows you to enable/disable the charts.css style sheet and animates the infographics when they enter the viewport. This feature, which uses the IntersectionObserver API, may eventually be replaced by the CSS animation-trigger property once it is supported by all browsers. If you prefer to do without it, simply ignore the .hideChart and .animChart statements.</li>
-            </ul>
+            </ul><script src="charts_toggle.js"></script>
             <p>This project is open source, licensed under CC0, and therefore freely reusable.</p>
             <p>These visualisations were tested as part of an accessibility audit carried out in late 2025. No issues were identified, in line with the Observatory’s <a href="https://observatoire.accessibilite.public.lu/en/accessibilityStatement">accessibility statement</a>.</p>
             <p>These visualisations are currently active on the <a href="https://observatoire.accessibilite.public.lu/">Digital accessibility observatory</a>.</p>
@@ -108,7 +109,7 @@
                 </table>
             </div>
         </section>
-        <p class="codepen" data-height="300" data-pen-title="Untitled" data-default-tab="css,result" data-slug-hash="pvEBKEj" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <p class="codepen" data-height="300" data-pen-title="Untitled" data-default-tab="css" data-slug-hash="pvEBKEj" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
         <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/pvEBKEj">
         Table to table and bar chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
@@ -134,7 +135,7 @@
                 </dl>
             </div>
         </section>
-        <p class="codepen" data-height="300" data-pen-title="Definition list to column chart" data-default-tab="css,result" data-slug-hash="JoRVZLL" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <p class="codepen" data-height="300" data-pen-title="Definition list to column chart" data-default-tab="css" data-slug-hash="JoRVZLL" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
             <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/JoRVZLL">Definition list to column chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
         <h2>Table to column chart</h2>
@@ -163,7 +164,7 @@
                 </table>
             </div>
         </section>
-        <p class="codepen" data-height="300" data-pen-title="Table to column chart" data-default-tab="css,result" data-slug-hash="GgjLGGa" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <p class="codepen" data-height="300" data-pen-title="Table to column chart" data-default-tab="css" data-slug-hash="GgjLGGa" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
             <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/GgjLGGa">Table to column chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
         <h2>Table to pie chart</h2>
@@ -201,7 +202,7 @@
                 </table>
             </div>
         </section>
-        <p class="codepen" data-height="300" data-pen-title="Table to pie chart" data-default-tab="css,result" data-slug-hash="WbGWygr" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <p class="codepen" data-height="300" data-pen-title="Table to pie chart" data-default-tab="css" data-slug-hash="WbGWygr" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
             <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/WbGWygr">Table to pie chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
         <aside>
@@ -242,7 +243,7 @@
                 </table>
             </div>
         </section>
-        <p class="codepen" data-height="300" data-pen-title="Table to pie chart v2" data-default-tab="css,result" data-slug-hash="vEyOdRY" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/vEyOdRY">Table to pie chart v2</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
+        <p class="codepen" data-height="300" data-pen-title="Table to pie chart v2" data-default-tab="css" data-slug-hash="vEyOdRY" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/vEyOdRY">Table to pie chart v2</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
         <h2>List to multibar chart</h2>
         <aside>
@@ -307,7 +308,7 @@
                 </div>
             </div>
         </section>
-        <p class="codepen" data-height="300" data-pen-title="List to multibar chart" data-default-tab="css,result" data-slug-hash="ByLEVqa" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <p class="codepen" data-height="300" data-pen-title="List to multibar chart" data-default-tab="css" data-slug-hash="ByLEVqa" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
             <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/ByLEVqa">List to multibar chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
         <h2>Definition list to bar chart</h2>
@@ -342,7 +343,7 @@
             </div>
             <p class="caption" id="NC-Caption">Ranking of non-compliances according to their frequency.<br>Synthesis of data established during in-depth audits  in 2025</p>
         </section>
-        <p class="codepen" data-height="300" data-pen-title="Untitled" data-default-tab="css,result" data-slug-hash="myrgKaY" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <p class="codepen" data-height="300" data-pen-title="Untitled" data-default-tab="css" data-slug-hash="myrgKaY" data-user="opendataluxembourg" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
             <span>See the Pen <a href="https://codepen.io/opendataluxembourg/pen/myrgKaY">Definition list to bar chart</a> by OpenData Luxembourg (<a href="https://codepen.io/opendataluxembourg">@opendataluxembourg</a>) on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
         <footer>

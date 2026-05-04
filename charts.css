@@ -68,7 +68,7 @@ section.Widget table tbody tr:hover, section.Widget table tbody tr:has(a:focus) 
     background-image: linear-gradient(to right, rgba(38,77,253,1) 0%, rgba(38,77,253,1) calc(var(--ratio)* 100%), rgba(208,226,246,1) calc(var(--ratio)* 100%), rgba(208,226,246,1) 100%);
 }
 
-section.Widget table td {
+section.Widget table.TopWebsites td {
     text-align: left;
 }
 
@@ -408,10 +408,6 @@ div.multibarchart > ul > li > ul li > span.animChart {
   justify-content: center;
 }
 
-.piechart tr:nth-of-type(2) {
-  --background: var(--hexagons);
-}
-
 .piechart [scope=row] {
   padding-inline-end: 0.5rem;
   font-weight: 300;
@@ -425,7 +421,7 @@ div.multibarchart > ul > li > ul li > span.animChart {
   content: "";
   display: inline-block;
   inline-size: 1rem;
-  translate: calc(-0.2rem * var(--is-rtl, 1)) 0.1rem 0;
+  translate: -0.2rem 0.1rem 0;
 }
 
 .piechart tbody tr {

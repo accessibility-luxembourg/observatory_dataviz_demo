@@ -1,16 +1,7 @@
 // on startup
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('css_toggle').addEventListener('click', toggleButton);
     observerInit();
 })
-
-
-// switch CSS
-function toggleButton () {
-    const mods = document.querySelector('link[href~="charts.css"]');
-    this.checked ? mods.disabled = false : mods.disabled = true;  
-}
-
 
 // dataviz animations
 function observerInit () {
