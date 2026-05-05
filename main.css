@@ -32,6 +32,10 @@ p, ul, h1, h2, h3 {
     box-sizing: border-box;
 }
 
+aside > ul {
+    margin-left: 1rem;
+}
+
 h1 {
     font-size: 2rem;
     font-weight: 700;
