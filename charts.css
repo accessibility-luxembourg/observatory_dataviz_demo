@@ -1,3 +1,14 @@
+.sr-only {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; 
+}
+
 /* Table to table and bar chart */
 section.Widget table.widgetMain {
     color: #1d3d5e;
