@@ -751,3 +751,246 @@ div#topNCresults dd.animChart {
   0% {opacity: 0;}
   100% {opacity: 1;}
 }
+
+/* Lina chart, global table layout */
+.linechart {
+  --years: 6;
+  --stripes: url("data:image/svg+xml,%3Csvg%20id%3D'stripes-svg'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'100%25'%20height%3D'100%25'%3E%3Cdefs%3E%3Cpattern%20id%3D'svg-stripes-pattern-11204'%20patternTransform%3D'rotate(130)'%20width%3D'100%25'%20height%3D'14'%20x%3D'0'%20y%3D'0'%20patternUnits%3D'userSpaceOnUse'%3E%3Cg%3E%3Crect%20x%3D'0'%20y%3D'0'%20width%3D'100%25'%20height%3D'10'%20fill%3D'rgba(0%2C%200%2C%200%2C%200)'%3E%3C%2Frect%3E%3Crect%20x%3D'0'%20y%3D'10'%20width%3D'100%25'%20height%3D'2'%20fill%3D'rgba(255%2C%20255%2C%20255%2C%201)'%3E%3C%2Frect%3E%3C%2Fg%3E%3C%2Fpattern%3E%3C%2Fdefs%3E%3Crect%20x%3D'0'%20y%3D'0'%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'url(%23svg-stripes-pattern-11204)'%3E%3C%2Frect%3E%3C%2Fsvg%3E");
+  --dots: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"><g fill="hsl(0 0% 100% / .6)" fill-rule="evenodd"><circle cx="5" cy="4" r="5"/><circle cx="13" cy="13" r="5"/></g></svg>');
+  --red: #9a031e;
+  --orange: #e36414;
+  --blue: #0f4c5c;
+  --height: 200px;
+  --width: 270px;
+  caption-side: bottom;
+  width: var(--width);
+  border-spacing: 0;
+  padding-top: var(--height);
+  padding-bottom: 1rem;
+  position: relative;
+  margin: 0 auto 1rem auto;
+}
+
+.linechart th, .linechart td {
+  font-size: 0.7rem;
+}
+
+.linechart th button {
+  border: none;
+  background: none;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 410px) {
+  .linechart {
+    --height: 250px;
+    --width: 350px;
+  }
+
+  .linechart th, .linechart td {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 510px) {
+  .linechart {
+    --height: 300px;
+    --width: 450px;
+  }
+}
+
+@media screen and (min-width: 610px) {
+  .linechart {
+    --height: 400px;
+    --width: 550px;
+  }
+}
+
+@media screen and (min-width: 710px) {
+  .linechart {
+    --height: 450px;
+    --width: 650px;
+  }
+}
+
+@media screen and (min-width: 810px) {
+  .linechart {
+    --height: 500px;
+    --width: 750px;
+  }
+}
+
+.linechart th, .linechart td {
+  text-align: left;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  width: calc(100% / (var(--years) + 1));
+}
+
+.linechart tr:nth-of-type(1) td {
+  border-bottom: 1px solid var(--orange);
+}
+
+.linechart tr:nth-of-type(2) td {
+  border-bottom: 1px solid var(--red);
+}
+
+.linechart tr:nth-of-type(3) td {
+  border-bottom: 1px solid var(--blue);
+}
+
+/* dots on chart */
+.linechart td::before {
+  content: attr(data-pct) / '';
+  position: absolute;
+  left: 0;
+  background: #fff;
+  border: 1px solid #1b263b;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+  line-height: 1.2rem;
+  z-index: 2;
+   transition: all 0.5s ease-in-out;
+  /* gradient 0 - 100% */
+  bottom: calc( (1px * var(--bottom)) + (var(--height) * var(--pctvalue) / 100) );
+}
+
+@media reader, speech, aural {
+    .linechart td::before {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.linechart.zoom td::before {
+  /* gradient 30 - 70% */
+  bottom: calc( (1px * var(--bottom) - (var(--height)) ) + (var(--height) * var(--pctvalue) / 35) );
+}
+
+.linechart td[data-pct='']::before {
+  display: none;
+}
+
+.linechart td:nth-of-type(1)::before {
+  --pctvalue: var(--1);
+}
+
+.linechart td:nth-of-type(2)::before {
+  --pctvalue: var(--2);
+}
+
+.linechart td:nth-of-type(3)::before {
+  --pctvalue: var(--3);
+}
+
+.linechart td:nth-of-type(4)::before {
+  --pctvalue: var(--4);
+}
+
+.linechart td:nth-of-type(5)::before {
+  --pctvalue: var(--5);
+}
+
+.linechart td:nth-of-type(6)::before {
+  --pctvalue: var(--6);
+}
+
+.linechart td:nth-of-type(7)::before {
+  --pctvalue: var(--7);
+}
+
+/* lines on chart */
+.linechart tr:nth-of-type(1) td::after, .linechart tbody tr:not(.off):nth-of-type(1) th::before {
+  background-color: var(--red);
+}
+
+.linechart tr:nth-of-type(2) td::after, .linechart tbody tr:not(.off):nth-of-type(2) th::before {
+  background-color: var(--orange);
+  background-image: var(--dots);
+}
+
+.linechart tr:nth-of-type(3) td::after, .linechart tbody tr:not(.off):nth-of-type(3) th::before {
+  background-color: var(--blue);
+  background-image: var(--stripes);
+}
+
+.linechart tbody tr th::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: 6px;
+}
+
+.linechart td::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0.6rem;
+  height: 4px;
+    /* gradient 0 - 100% */
+  --ay: calc( (1px * var(--bottom)) + (var(--height) * var(--h1) / 100) + (1.5rem / 2) );
+  --by: calc( (1px * var(--bottom)) + (var(--height) * var(--h2) / 100) + (1.5rem / 2) );
+  bottom: var(--ay);
+  --diffy: calc(var(--ay) - var(--by));
+  --hypo: hypot(calc(var(--width) / (var(--years) + 1)), var(--diffy));
+  width: var(--hypo);
+  transform-origin: 0 0;
+  transform: rotate(atan2(var(--diffy), calc(var(--width) / (var(--years) + 1))));
+  transition: all 0.5s ease-in-out;
+}
+
+.linechart.zoom td::after {
+  /* gradient 30 - 70% */
+  --ay: calc( (1px * var(--bottom) - (var(--height))) + (var(--height) * var(--h1) / 35) + (1.5rem / 2) );
+  --by: calc( (1px * var(--bottom) - (var(--height))) + (var(--height) * var(--h2) / 35) + (1.5rem / 2) );
+}
+
+.linechart td:nth-of-type(1)::after {
+  --h1: var(--1);
+  --h2: var(--2);
+}
+
+.linechart td:nth-of-type(2)::after {
+  --h1: var(--2);
+  --h2: var(--3);
+}
+
+.linechart td:nth-of-type(3)::after {
+  --h1: var(--3);
+  --h2: var(--4);
+}
+
+.linechart td:nth-of-type(4)::after {
+  --h1: var(--4);
+  --h2: var(--5);
+}
+
+.linechart td:nth-of-type(5)::after {
+  --h1: var(--5);
+  --h2: var(--6);
+}
+
+.linechart td:nth-of-type(6)::after {
+  --h1: var(--6);
+  --h2: var(--7);
+}
+
+.linechart td:nth-of-type(7)::after {
+  --h1: var(--7);
+  --h2: var(--8);
+}
+
+/* swith on - off lines */
+.linechart tbody tr.off td::before, .linechart tbody tr.off td::after {
+  display: none;
+}
